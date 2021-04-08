@@ -1,0 +1,7 @@
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\bin\Debug\BstProject.exe.config
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\bin\Debug\BstProject.exe
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\bin\Debug\BstProject.pdb
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\obj\Debug\BstProject.csprojAssemblyReference.cache
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\obj\Debug\BstProject.csproj.CoreCompileInputs.cache
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\obj\Debug\BstProject.exe
+C:\Users\picciau\Desktop\New folder\BstProject\BstProject\obj\Debug\BstProject.pdb
