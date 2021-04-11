@@ -2,5 +2,5 @@
 # Il file gitignore è stato creato automaticamente da Microsoft(R) Visual Studio.
 ################################################################################
 
-/BstProject/obj
-/BstProject/bin
+/BstProjectNetCore/obj
+/BstProjectNetCore/bin
