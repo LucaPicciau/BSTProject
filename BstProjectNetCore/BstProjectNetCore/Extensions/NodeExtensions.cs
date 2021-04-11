@@ -4,15 +4,12 @@ namespace BstProjectNetCore.Extensions
 {
     public static class NodeExtensions
     {
-        public static IgorNode GetNodeFromChar(this IgorNode a, IgorNode b)
-        {
-            switch(a.TypeChar)
+        public static IgorNode GetNodeFromChar(this IgorNode a, IgorNode b) =>
+            a.TypeChar switch
             {
-                case 'Y': return b.YesNode;
-                case 'N': return b.NoNode;
-            }
-
-            return null;
-        }
+                'Y' => b.YesNode,
+                'N' => b.NoNode,
+                _   => null,
+            };
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ZackF\\Desktop\\Nuova cartella (2)\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj": {}
+    "C:\\Users\\ZackF\\Desktop\\Nuova cartella\\_project\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ZackF\\Desktop\\Nuova cartella (2)\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj": {
+    "C:\\Users\\ZackF\\Desktop\\Nuova cartella\\_project\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ZackF\\Desktop\\Nuova cartella (2)\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj",
+        "projectUniqueName": "C:\\Users\\ZackF\\Desktop\\Nuova cartella\\_project\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj",
         "projectName": "BstProjectNetCore",
-        "projectPath": "C:\\Users\\ZackF\\Desktop\\Nuova cartella (2)\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj",
+        "projectPath": "C:\\Users\\ZackF\\Desktop\\Nuova cartella\\_project\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore.csproj",
         "packagesPath": "C:\\Users\\ZackF\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ZackF\\Desktop\\Nuova cartella (2)\\BstProjectNetCore\\BstProjectNetCore\\obj\\",
+        "outputPath": "C:\\Users\\ZackF\\Desktop\\Nuova cartella\\_project\\BstProjectNetCore\\BstProjectNetCore\\BstProjectNetCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ZackF\\AppData\\Roaming\\NuGet\\NuGet.Config",

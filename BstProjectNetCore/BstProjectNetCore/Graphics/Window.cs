@@ -37,9 +37,7 @@ namespace BstProjectNetCore.Graphics
             foreach (var y in Grid.Map)
             {
                 foreach (var x in y)
-                {
                     Console.Write(x.Str);
-                }
 
                 Thread.Sleep(10);
                 Console.WriteLine();
@@ -67,8 +65,6 @@ namespace BstProjectNetCore.Graphics
                 Grid.SetElementToMap((x, node.Position.Item2 + 1), s);
             }
         }
-
-        //public void Clear() => Grid.Clear();
 
         public void Clear()
         {

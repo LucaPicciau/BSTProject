@@ -14,3 +14,19 @@ C:\Users\ZackF\Desktop\Nuova cartella (2)\BstProjectNetCore\BstProjectNetCore\ob
 C:\Users\ZackF\Desktop\Nuova cartella (2)\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\ref\BstProjectNetCore.dll
 C:\Users\ZackF\Desktop\Nuova cartella (2)\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.pdb
 C:\Users\ZackF\Desktop\Nuova cartella (2)\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.genruntimeconfig.cache
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.exe
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.deps.json
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.runtimeconfig.json
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.runtimeconfig.dev.json
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.dll
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\ref\BstProjectNetCore.dll
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\bin\Debug\net5.0\BstProjectNetCore.pdb
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.csprojAssemblyReference.cache
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.AssemblyInfoInputs.cache
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.AssemblyInfo.cs
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.csproj.CoreCompileInputs.cache
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.dll
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\ref\BstProjectNetCore.dll
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.pdb
+C:\Users\ZackF\Desktop\Nuova cartella\_project\BstProjectNetCore\BstProjectNetCore\BstProjectNetCore\obj\Debug\net5.0\BstProjectNetCore.genruntimeconfig.cache
