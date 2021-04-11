@@ -12,10 +12,6 @@
 
         public bool IsLeaf => YesNode == null && NoNode == null;
 
-        public IgorNode()
-        {
-        }
-
         public IgorNode Find(int key)
         {
             if (Key == key)

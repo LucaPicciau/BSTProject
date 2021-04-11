@@ -21,12 +21,11 @@ namespace BstProjectNetCore.Graphics
 
         public void Update(IgorNode node, int dataPrint = 0, params string[] separator)
         {
-            string str;
-
-            if (dataPrint == 0)
-                str = node.Question.ToString();
-            else
-                str = node.Key.ToString();
+            var str = dataPrint switch
+            {
+                0 => node.Question.ToString(),
+                _ => node.Key.ToString(),
+            };
 
             UpdateText(node, str);
             UpdateSeparators(node, str, separator);
@@ -54,13 +53,12 @@ namespace BstProjectNetCore.Graphics
         {
             foreach (var s in separator.Where(x => x != string.Empty))
             {
-                var x = 0;
-
-                switch (s)
+                var x = s switch
                 {
-                    case "\\": x = node.Position.Item1 + str.Length; break;
-                    case "/": x = node.Position.Item1 - 1; break;
-                }
+                    "\\"    => node.Position.Item1 + str.Length,
+                    "/"     => node.Position.Item1 - 1,
+                    _       => 0,
+                };
 
                 Grid.SetElementToMap((x, node.Position.Item2 + 1), s);
             }
@@ -69,7 +67,7 @@ namespace BstProjectNetCore.Graphics
         public void Clear()
         {
             for (int y = 0; y < Size.Item2; y++)
-                for(int x = 0; x < Size.Item1; x++)
+                for (int x = 0; x < Size.Item1; x++)
                 {
                     Console.SetCursorPosition(x, y);
                     Grid.SetElementToMap((x, y), " ");
