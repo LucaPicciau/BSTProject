@@ -47,7 +47,6 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Graphics\Grid.cs" />
     <Compile Include="Graphics\Tile.cs" />
-    <Compile Include="Graphics\Vector2i.cs" />
     <Compile Include="Graphics\Window.cs" />
     <Compile Include="Models\Hierarchy.cs" />
     <Compile Include="Models\IgorBstTree.cs" />

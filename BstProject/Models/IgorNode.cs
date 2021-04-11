@@ -1,6 +1,4 @@
-﻿using BstProject.Graphics;
-
-namespace BstProject.Models
+﻿namespace BstProject.Models
 {
     public class IgorNode
     {
@@ -10,13 +8,12 @@ namespace BstProject.Models
         public IgorNode YesNode { get; set; }
         public IgorNode NoNode { get; set; }
         public char TypeChar { get; set; }
-        public Vector2i Position { get; set; }
+        public (int, int) Position { get; set; }
 
         public bool IsLeaf => YesNode == null && NoNode == null;
 
         public IgorNode()
         {
-            Position = new Vector2i();
         }
 
         public IgorNode Find(int key)

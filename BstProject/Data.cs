@@ -18,7 +18,7 @@ namespace BstProject
 
                 if (Convert.ToChar(dataSplitted.Last()) == 'E')
                 {
-                    hierarchy.Index = new Tuple<int, int, string, char>(Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3]));
+                    hierarchy.Index = (Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3]));
                     continue;
                 }
 

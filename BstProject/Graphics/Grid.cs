@@ -5,9 +5,9 @@ namespace BstProject.Graphics
     public class Grid
     {
         public List<List<Tile>> Map { get; set; }
-        public Vector2i Size { get; set; }
+        public (int, int) Size { get; set; }
 
-        public Grid(Vector2i size)
+        public Grid((int, int) size)
         {
             Map = new List<List<Tile>>();
             Size = size;
@@ -22,20 +22,20 @@ namespace BstProject.Graphics
                     x.Str = " ";
         }
 
-        public void SetElementToMap(int x, int y, string str)
+        public void SetElementToMap((int, int) position, string str)
         {
-            if (Size.Y >= y && Size.X >= x && y >= 0 && x >= 0)
-                Map[y][x].Str = str;
+            if (Size.Item2 >= position.Item2 && Size.Item1 >= position.Item1 && position.Item2 >= 0 && position.Item1 >= 0)
+                Map[position.Item2][position.Item1].Str = str;
         }
 
         private void InitMap()
         {
-            for (var i = 0; i < Size.Y; i++)
+            for (var i = 0; i < Size.Item2; i++)
             {
                 Map.Add(new List<Tile>());
 
-                for (var j = 0; j < Size.X; j++)
-                    Map[i].Add(new Tile(" ", new Vector2i(j, i)));
+                for (var j = 0; j < Size.Item1; j++)
+                    Map[i].Add(new Tile(" ", (j, i)));
             }
         }
     }

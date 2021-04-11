@@ -10,7 +10,7 @@ namespace BstProject
         public IgorBstTree BstTree { get; private set; }
         public int TreeLength { get; private set; }
 
-        public Engine(Vector2i sizeWindow)
+        public Engine((int, int) sizeWindow)
         {
             Window = new Window(sizeWindow);
             BstTree = new IgorBstTree();
@@ -26,7 +26,7 @@ namespace BstProject
                 ParentKey = hierarchy.Index.Item2,
                 Question = hierarchy.Index.Item3,
                 TypeChar = hierarchy.Index.Item4,
-                Position = new Vector2i(80, 0)
+                Position = (30, 0)
             };
 
             foreach (var data in hierarchy.SubIndex)
@@ -37,12 +37,52 @@ namespace BstProject
                     ParentKey = data.Item2,
                     Question = data.Item3,
                     TypeChar = data.Item4,
-                    Position = new Vector2i(BstTree.Root.Position.X, BstTree.Root.Position.Y)
+                    Position = (BstTree.Root.Position.Item1, BstTree.Root.Position.Item2)
                 });
             }
         }
 
+
         public void Run()
+        {
+            //Game();
+
+            for (int i = 0; i < TreeLength; i++)
+                PrintData(BstTree.Root);
+
+            Window.Render();
+            Window.Clear();
+
+            Console.WriteLine("\nPremere un tasto per continuare");
+            Console.ReadLine();
+            Console.SetCursorPosition(0, 0);
+        }
+
+
+        public void PrintData(IgorNode node)
+        {
+            Window.Update(node, 1, node.YesNode != null ? "/" : "", node.NoNode != null ? "\\" : "");
+
+            if (node.YesNode != null)
+            {
+                UpdatePosition(node.YesNode, node.Position);
+                PrintData(node.YesNode);
+            }
+
+            if (node.NoNode != null)
+            {
+                UpdatePosition(node.NoNode, node.Position);
+                PrintData(node.NoNode);
+            }
+        }
+
+        private void UpdatePosition(IgorNode node, (int, int) position)
+        {
+            var space = node.Key.ToString().Length + 1;
+            node.Position = (position.Item1 + ( node.TypeChar == 'Y' ? -space : space), position.Item2 + 2);
+        }
+
+        private void Game()
         {
             /*
             var index = 100;
@@ -83,36 +123,6 @@ namespace BstProject
                 Window.Update(node, 0, node.YesNode != null && key == ConsoleKey.Y ? "/" : "", node.NoNode != null && key == ConsoleKey.N ? "\\" : "");
             }
             */
-            for (int i = 0; i < TreeLength; i++)
-                PrintData(BstTree.Root);
-
-            Window.Render();
-
-            Console.ReadLine();
-        }
-
-        public void PrintData(IgorNode node)
-        {
-            Window.Update(node, 1, node.YesNode != null ? "/" : "", node.NoNode != null ? "\\" : "");
-
-            if (node.YesNode != null)
-            {
-                UpdatePosition(node.YesNode, node.Position);
-                PrintData(node.YesNode);
-            }
-
-            if (node.NoNode != null)
-            {
-                UpdatePosition(node.NoNode, node.Position);
-                PrintData(node.NoNode);
-            }
-        }
-
-        private void UpdatePosition(IgorNode node, Vector2i position)
-        {
-            var space = node.Key.ToString().Length + 1;
-            node.Position.X = position.X + ( node.TypeChar == 'Y' ? -space : space);
-            node.Position.Y = position.Y + 2;
         }
     }
 }
