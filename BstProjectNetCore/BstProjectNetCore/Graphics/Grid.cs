@@ -28,7 +28,7 @@ namespace BstProjectNetCore.Graphics
                     x.Str = " ";
         }
 
-        public void SetElementToMap((int, int) position, string str)
+        public void SetElementToMap((int, int) position, string str, string changed = ".")
         {
             if (Size.Item2 >= position.Item2 && Size.Item1 >= position.Item1 && position.Item2 >= 0 && position.Item1 >= 0 &&
                 Map[position.Item2][position.Item1].Str != str)
@@ -38,7 +38,7 @@ namespace BstProjectNetCore.Graphics
 
                 Map[position.Item2][position.Item1].Str = str;
 
-                ChangedMap.Add(new Tile(".", position));
+                ChangedMap.Add(new Tile(changed, position));
                 Console.Write(ChangedMap[0].Str);
             }
         }

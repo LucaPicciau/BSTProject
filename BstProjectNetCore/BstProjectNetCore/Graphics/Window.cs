@@ -80,13 +80,17 @@ namespace BstProjectNetCore.Graphics
 
         public void Clear()
         {
-            for (int y = 0; y < Size.Item2; y++)
+            for (var y = 0; y < Grid.Map.Count; y++)
+            {
                 for (int x = 0; x < Size.Item1; x++)
                 {
-                    Console.SetCursorPosition(x, y);
-                    Grid.SetElementToMap((x, y), " ");
+                    if (Grid.Map[y][x].Str != " ")
+                    {
+                        Console.SetCursorPosition(x, y);
+                        Grid.SetElementToMap((x, y), " ", " ");
+                    }
                 }
-
+            }
         }
     }
 }
