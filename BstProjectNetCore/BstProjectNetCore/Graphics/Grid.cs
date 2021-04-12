@@ -1,15 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace BstProjectNetCore.Graphics
 {
     public class Grid
     {
         public List<List<Tile>> Map { get; set; }
+        public List<Tile> ChangedMap { get; private set; }
+
         public (int, int) Size { get; set; }
 
         public Grid((int, int) size)
         {
             Map = new List<List<Tile>>();
+            ChangedMap = new List<Tile>();
+
             Size = size;
 
             InitMap();
@@ -24,8 +30,17 @@ namespace BstProjectNetCore.Graphics
 
         public void SetElementToMap((int, int) position, string str)
         {
-            if (Size.Item2 >= position.Item2 && Size.Item1 >= position.Item1 && position.Item2 >= 0 && position.Item1 >= 0)
+            if (Size.Item2 >= position.Item2 && Size.Item1 >= position.Item1 && position.Item2 >= 0 && position.Item1 >= 0 &&
+                Map[position.Item2][position.Item1].Str != str)
+            {
+                Thread.Sleep(50);
+                Console.SetCursorPosition(position.Item1, position.Item2);
+
                 Map[position.Item2][position.Item1].Str = str;
+
+                Console.Write("+");
+                ChangedMap.Add(new Tile("+", position));
+            }
         }
 
         private void InitMap()

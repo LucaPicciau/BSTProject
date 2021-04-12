@@ -13,7 +13,7 @@ namespace BstProjectNetCore.Graphics
         public Window((int, int) size)
         {
             Console.SetWindowSize(size.Item1 + 20, size.Item2 + 20);
-            Console.CursorVisible = false;
+            //Console.CursorVisible = false;
 
             Grid = new Grid(size);
             Size = Grid.Size;
@@ -33,14 +33,28 @@ namespace BstProjectNetCore.Graphics
 
         public void Render()
         {
-            foreach (var y in Grid.Map)
+            for (var y = 0; y < Grid.Map.Count; y++)
             {
-                foreach (var x in y)
-                    Console.Write(x.Str);
+                var toChange = Grid.ChangedMap.Where(a => a.Position.Item2 == y).ToList();
 
-                Thread.Sleep(10);
+                if (toChange.Count == 0)
+                    continue;
+
+                for (var x = 0; x < toChange.Count; x++)
+                {
+                    Console.SetCursorPosition(toChange[x].Position.Item1, toChange[x].Position.Item2);
+
+                    var tile = Grid.Map[toChange[x].Position.Item2][toChange[x].Position.Item1];
+
+                    if (tile.Str != " ") Thread.Sleep(100);
+                    Console.Write(tile.Str);
+                }
+
                 Console.WriteLine();
             }
+
+            Grid.ChangedMap.Clear();
+            Console.SetCursorPosition(0, Grid.Map.Count);
         }
 
         private void UpdateText(IgorNode node, string str)
@@ -72,6 +86,7 @@ namespace BstProjectNetCore.Graphics
                     Console.SetCursorPosition(x, y);
                     Grid.SetElementToMap((x, y), " ");
                 }
+
         }
     }
 }

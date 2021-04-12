@@ -39,7 +39,7 @@ namespace BstProjectNetCore
                         ParentKey = data.Item2,
                         Question = data.Item3,
                         TypeChar = data.Item4,
-                        Position = (BstTree.Root.Position.Item1, BstTree.Root.Position.Item2)
+                        Position = BstTree.Root.Position
                     });
                 }
             }
@@ -49,15 +49,12 @@ namespace BstProjectNetCore
             {
                 //Game();
 
-                for (int i = 0; i < TreeLength; i++)
-                    PrintData(BstTree.Root);
+                PrintData(BstTree.Root);
 
                 Window.Render();
-                Window.Clear();
 
                 Console.WriteLine("\nPremere un tasto per continuare");
                 Console.ReadLine();
-                Console.SetCursorPosition(0, 0);
             }
 
 
@@ -67,21 +64,21 @@ namespace BstProjectNetCore
 
                 if (node.YesNode != null)
                 {
-                    UpdatePosition(node.YesNode, node.Position);
+                    UpdatePosition(node.YesNode, node.Position, node.Key.ToString().Length);
                     PrintData(node.YesNode);
                 }
 
                 if (node.NoNode != null)
                 {
-                    UpdatePosition(node.NoNode, node.Position);
+                    UpdatePosition(node.NoNode, node.Position, node.Key.ToString().Length);
                     PrintData(node.NoNode);
                 }
             }
 
-            private void UpdatePosition(IgorNode node, (int, int) position)
+            private static void UpdatePosition(IgorNode node, (int, int) parentPosition, int length)
             {
-                var space = node.Key.ToString().Length + 1;
-                node.Position = (position.Item1 + (node.TypeChar == 'Y' ? -space : space), position.Item2 + 2);
+                var space = (length > node.Key.ToString().Length ? node.Key.ToString().Length : length) + 1;
+                node.Position = (parentPosition.Item1 + (node.TypeChar == 'Y' ? -space : space), parentPosition.Item2 + 2);
             }
 
             private void Game()
