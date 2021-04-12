@@ -40,11 +40,11 @@ namespace BstProjectNetCore.Graphics
                 if (toChange.Count == 0)
                     continue;
 
-                for (var x = 0; x < toChange.Count; x++)
+                foreach (var tileOffset in toChange)
                 {
-                    Console.SetCursorPosition(toChange[x].Position.Item1, toChange[x].Position.Item2);
+                    Console.SetCursorPosition(tileOffset.Position.Item1, tileOffset.Position.Item2);
+                    var tile = Grid.Map[tileOffset.Position.Item2][tileOffset.Position.Item1];
 
-                    var tile = Grid.Map[toChange[x].Position.Item2][toChange[x].Position.Item1];
 
                     if (tile.Str != " ") Thread.Sleep(100);
                     Console.Write(tile.Str);

@@ -38,8 +38,8 @@ namespace BstProjectNetCore.Graphics
 
                 Map[position.Item2][position.Item1].Str = str;
 
-                Console.Write("+");
-                ChangedMap.Add(new Tile("+", position));
+                ChangedMap.Add(new Tile(".", position));
+                Console.Write(ChangedMap[0].Str);
             }
         }
 
