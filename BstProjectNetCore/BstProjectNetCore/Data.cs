@@ -5,31 +5,27 @@ using System.Linq;
 
 namespace BstProjectNetCore
 {
-    partial class Program
+    public static class Data
     {
-        public static class Data
+        public static Hierarchy ReadData(string path)
         {
-            public static Hierarchy ReadData(string path)
+            var datas = File.ReadAllLines(path);
+            var hierarchy = new Hierarchy { TotalRoots = datas.Length };
+
+            foreach (var data in datas)
             {
-                var datas = File.ReadAllLines(path);
-                var hierarchy = new Hierarchy { TotalRoots = datas.Length };
+                var dataSplitted = data.Split(';');
 
-                foreach (var data in datas)
+                if (Convert.ToChar(dataSplitted.Last()) == 'E')
                 {
-                    var dataSplitted = data.Split(';');
-
-                    if (Convert.ToChar(dataSplitted.Last()) == 'E')
-                    {
-                        hierarchy.Index = (Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3]));
-                        continue;
-                    }
-
-                    hierarchy.SubIndex.Add((Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3])));
+                    hierarchy.Index = (Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3]));
+                    continue;
                 }
 
-                return hierarchy;
+                hierarchy.SubIndex.Add((Convert.ToInt32(dataSplitted[0]), Convert.ToInt32(dataSplitted[1]), dataSplitted[2], Convert.ToChar(dataSplitted[3])));
             }
+
+            return hierarchy;
         }
     }
-
 }

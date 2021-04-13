@@ -12,13 +12,7 @@
 
         public bool IsLeaf => YesNode == null && NoNode == null;
 
-        public IgorNode Find(int key)
-        {
-            if (Key == key)
-                return this;
-
-            return YesNode?.Find(key) ?? NoNode?.Find(key);
-        }
+        public IgorNode Find(int key) => (Key == key) ? this : YesNode?.Find(key) ?? NoNode?.Find(key);
 
         public void Insert(IgorNode node)
         {
