@@ -16,12 +16,7 @@ namespace GraphicsLibrary.Graphics
             InitMap();
         }
 
-        public void Clear()
-        {
-            foreach (var y in Map)
-                foreach (var x in y)
-                    x.Str = " ";
-        }
+        public void Clear() => Map.ForEach(_ => _.ForEach(tile => tile.Str = " "));
 
         public void SetElementToMap((int, int) position, string str)
         {

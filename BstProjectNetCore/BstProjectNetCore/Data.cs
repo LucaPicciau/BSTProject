@@ -9,8 +9,8 @@ namespace BstProjectNetCore
     {
         public static Hierarchy ReadData(string path)
         {
-            var datas = File.ReadAllLines(path);
-            var hierarchy = new Hierarchy { TotalRoots = datas.Length };
+            var datas = File.ReadAllLines(path).Where(_ => !_.Contains("|"));
+            var hierarchy = new Hierarchy { TotalRoots = datas.Count() };
 
             foreach (var data in datas)
             {

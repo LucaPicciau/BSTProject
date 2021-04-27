@@ -66,7 +66,7 @@ namespace GraphicsLibrary.Graphics
 
                 foreach (var offsetTile in toChange)
                 {
-                    var tile = grid.Map[offsetTile.Position.Item2][offsetTile.Position.Item1];
+                    var tile = grid.GetTile(offsetTile.Position);
                     Console.SetCursorPosition(tile.Position.Item1, tile.Position.Item2);
 
                     if (tile.Str != " ") Thread.Sleep(100);
