@@ -64,8 +64,6 @@ namespace BstProjectNetCore
                 engine.BstTree.Insert(node5);
 
                 engine.Run();
-
-                engine.Window.Clear();
             }
         }
     }

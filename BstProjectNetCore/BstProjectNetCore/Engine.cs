@@ -1,5 +1,5 @@
-﻿using BstProjectNetCore.Graphics;
-using BstProjectNetCore.Models;
+﻿using BstProjectNetCore.Models;
+using GraphicsLibrary.Graphics;
 using System;
 
 namespace BstProjectNetCore
@@ -22,7 +22,8 @@ namespace BstProjectNetCore
                 ParentKey = hierarchy.Index.Item2,
                 Question = hierarchy.Index.Item3,
                 TypeChar = hierarchy.Index.Item4,
-                Position = (30, 0)
+                Position = (30, 0),
+                Shape = new RectangleShape() { Position = (30, 0), Texture = hierarchy.Index.Item1.ToString() }
             };
 
             foreach (var data in hierarchy.SubIndex)
@@ -40,80 +41,30 @@ namespace BstProjectNetCore
 
         public void Run()
         {
-            //Game();
+            UpdateData(BstTree.Root);
 
-            PrintData(BstTree.Root);
+            Window.Draw();
 
-            Window.Render();
 
             Console.WriteLine("\nPremere un tasto per continuare");
             Console.ReadLine();
         }
 
-        public void PrintData(IgorNode node)
+        public void UpdateData(IgorNode node)
         {
-            Window.Update(node, 1, node.YesNode != null ? "/" : "", node.NoNode != null ? "\\" : "");
+            node.Render(Window);
 
             if (node.YesNode != null)
             {
-                UpdatePosition(node.YesNode, node.Position, node.Key.ToString().Length);
-                PrintData(node.YesNode);
+                node.YesNode.Update(node.YesNode, node.Position, node.Key.ToString().Length);
+                UpdateData(node.YesNode);
             }
 
             if (node.NoNode != null)
             {
-                UpdatePosition(node.NoNode, node.Position, node.Key.ToString().Length);
-                PrintData(node.NoNode);
+                node.NoNode.Update(node.NoNode, node.Position, node.Key.ToString().Length);
+                UpdateData(node.NoNode);
             }
-        }
-
-        private static void UpdatePosition(IgorNode node, (int, int) parentPosition, int length)
-        {
-            var space = (length > node.Key.ToString().Length ? node.Key.ToString().Length : length) + 1;
-            node.Position = (parentPosition.Item1 + (node.TypeChar == 'Y' ? -space : space), parentPosition.Item2 + 2);
-        }
-
-        private void Game()
-        {
-            /*
-            var index = 100;
-
-            while (true)
-            {
-                Console.Clear();
-
-                ConsoleKey key = ConsoleKey.NoName;
-
-
-                var node = BstTree.FindByKey(index);
-                Window.Update(node);
-                Window.Render();
-                Console.Write("Left: {0}, Right: {1}", (node.YesNode == null ? "null" : node.YesNode.Key.ToString()), (node.NoNode == null ? "null" : node.NoNode.Key.ToString()));
-                Console.WriteLine();
-
-                while (true)
-                {
-                    var select = Console.ReadKey();
-
-                    if (select.Key == ConsoleKey.Y)
-                        key = ConsoleKey.Y;
-                    else if (select.Key == ConsoleKey.N)
-                        key = ConsoleKey.N;
-
-                    if (key != ConsoleKey.NoName)
-                        break;
-                }
-
-                switch (key)
-                {
-                    case ConsoleKey.Y: index = node.YesNode.Key; break;
-
-                    case ConsoleKey.N: index = node.NoNode.Key; break;
-                }
-
-                Window.Update(node, 0, node.YesNode != null && key == ConsoleKey.Y ? "/" : "", node.NoNode != null && key == ConsoleKey.N ? "\\" : "");
-            }
-            */
         }
     }
 }

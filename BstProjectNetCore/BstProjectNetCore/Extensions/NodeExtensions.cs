@@ -8,7 +8,7 @@ namespace BstProjectNetCore.Extensions
         {
             'Y' => b.YesNode,
             'N' => b.NoNode,
-            _ => null,
+             _  => null,
         };
     }
 }
