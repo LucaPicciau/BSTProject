@@ -35,6 +35,6 @@ namespace GraphicsLibrary.Graphics
             }
         }
 
-        public Tile GetTile((int, int) position) => Map[position.Item2][position.Item1];
+        public Tile GetTile((int, int) position) => position.Item1 >= 0 && position.Item2 >= 0 ? Map[position.Item2][position.Item1] : null;
     }
 }

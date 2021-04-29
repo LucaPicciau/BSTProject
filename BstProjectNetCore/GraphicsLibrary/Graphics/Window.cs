@@ -15,7 +15,7 @@ namespace GraphicsLibrary.Graphics
         public Window((int, int) size)
         {
             Console.SetWindowSize(size.Item1 + 20, size.Item2 + 20);
-            //Console.CursorVisible = false;
+            Console.CursorVisible = false;
 
             Grid = new Grid(size);
             Size = Grid.Size;
@@ -69,7 +69,7 @@ namespace GraphicsLibrary.Graphics
                     var tile = grid.GetTile(offsetTile.Position);
                     Console.SetCursorPosition(tile.Position.Item1, tile.Position.Item2);
 
-                    if (tile.Str != " ") Thread.Sleep(100);
+                    if (tile.Str != " ") Thread.Sleep(50);
                     Console.Write(tile.Str);
                 }
 

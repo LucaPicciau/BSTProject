@@ -24,8 +24,7 @@ namespace BstProjectNetCore.Models
         {
             var nodeFinded = Find(node.ParentKey);
 
-            if (nodeFinded == null)
-                return;
+            if (nodeFinded == null) return;
 
             node.Shape ??= new RectangleShape() { Position = node.Position, Texture = node.Key.ToString() };
 
@@ -43,17 +42,17 @@ namespace BstProjectNetCore.Models
             }
         }
 
-        public void Update(IgorNode node, (int, int) parentPosition, int length)
+        public void Update((int, int) parentPosition, int length)
         {
-            var space = (length > node.Key.ToString().Length ? node.Key.ToString().Length : length) + 1;
-            node.Position = (parentPosition.Item1 + (node.TypeChar == 'Y' ? -space : space), parentPosition.Item2 + 2);
-            Shape.Position = node.Position;
+            var space = (length > Key.ToString().Length ? Key.ToString().Length : length) + 1;
+            Position = (parentPosition.Item1 + (TypeChar == 'Y' ? -space : space), parentPosition.Item2 + 2);
+            Shape.Position = Position;
 
             if(LeftSeparator != null)
-                LeftSeparator.Position = (node.Position.Item1 - 1, node.Position.Item2 + 1);
+                LeftSeparator.Position = (Position.Item1 - 1, Position.Item2 + 1);
 
             if (RightSeparator != null)
-                RightSeparator.Position = (node.Position.Item1 + Shape.Texture.Length, node.Position.Item2 + 1);
+                RightSeparator.Position = (Position.Item1 + Shape.Texture.Length, Position.Item2 + 1);
         }
 
         public void Render(Window window)

@@ -56,13 +56,13 @@ namespace BstProjectNetCore
 
             if (node.YesNode != null)
             {
-                node.YesNode.Update(node.YesNode, node.Position, node.Key.ToString().Length);
+                node.YesNode.Update(node.Shape.Position, node.Key.ToString().Length);
                 UpdateData(node.YesNode);
             }
 
             if (node.NoNode != null)
             {
-                node.NoNode.Update(node.NoNode, node.Position, node.Key.ToString().Length);
+                node.NoNode.Update(node.Shape.Position, node.Key.ToString().Length);
                 UpdateData(node.NoNode);
             }
         }
